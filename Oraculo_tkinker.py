@@ -21,9 +21,11 @@ arcanos_mayores = cardsImgs[cardsImgs['arcana'] == 'Major Arcana']
 
 #########################
 
-tirada = arcanos_mayores.sample(1)
 #función
 def tirar():
+    global tirada
+    tirada = arcanos_mayores.sample(1)
+
     img_path = f'C:/Users/arace/OneDrive/Escritorio/Maestría/TA en IA/TP interfaces/cards/{tirada["img"].values[0]}'
     img = PIL.Image.open(img_path)
     img = img.resize((200, 300))
